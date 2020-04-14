@@ -122,7 +122,7 @@
 
 
 
-  <title>leetcode 笔记 | 追光者</title>
+  <title>java_basic | 追光者</title>
   
 
 
@@ -225,7 +225,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/04/leetcode_notebook/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/14/java-basic/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="SunFlowerY1">
@@ -242,7 +242,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">leetcode 笔记</h1>
+          <h1 class="post-title" itemprop="name headline">java_basic</h1>
         
 
         <div class="post-meta">
@@ -254,7 +254,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-04T22:04:38+08:00">2020-01-04</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-14T10:31:49+08:00">2020-04-14</time>
             
 
             
@@ -291,15 +291,7 @@
 
       
         <hr>
-<p><a href="https://leetcode.com/problemset/all/" target="_blank" rel="noopener">leetcode-problems-set</a></p>
-<h2 id="Is-Subsequence"><a href="#Is-Subsequence" class="headerlink" title="Is Subsequence"></a><a href="https://leetcode.com/problems/is-subsequence/" target="_blank" rel="noopener">Is Subsequence</a></h2><p><strong>1、顺序查找法</strong><br><strong>explain</strong>:<br>&emsp;&emsp;如果 s[i] == t[j], 那么<br>&emsp;&emsp;对于 s[i + 1] 要从 t[j + 1] 开始查找.<br><strong>code</strong>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">    class Solution &#123;</span><br><span class="line">    public boolean isSubsequence(String s, String t) &#123;</span><br><span class="line">        char[] sCharArray &#x3D; s.toCharArray();</span><br><span class="line">        char[] tCharArray &#x3D; t.toCharArray();</span><br><span class="line">        int i &#x3D; 0;</span><br><span class="line">        int j &#x3D; 0;</span><br><span class="line">        while(i &lt; s.length())&#123;</span><br><span class="line">            while(j &lt; t.length() &amp;&amp; sCharArray[i] !&#x3D; tCharArray[j])&#123;</span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line">            if(j &gt;&#x3D; t.length())&#123;</span><br><span class="line">                return false;</span><br><span class="line">            &#125;</span><br><span class="line">            i++;</span><br><span class="line">            j++;</span><br><span class="line">        &#125;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>2、动态规划</strong><br><strong>explain:</strong><br>&emsp;&emsp;要写矩阵，速度不如顺序查找<br>&emsp;&emsp;1、s(0) 与 t(0) 空串，匹配成功 dp[0][0] = true;<br>&emsp;&emsp;2、s(0) 与 t(j) j &gt; 0, 匹配成功 dp[0][j] = true;<br>&emsp;&emsp;3、s(i) 与 t(j) i &gt; 0, j &gt; 0:<br>&emsp;&emsp;&emsp;1) s[i - 1] == t[j - 1], dp[i][j] = dp[i - 1][j - 1];<br>&emsp;&emsp;&emsp;2) s[i - 1] != t[j - 1], dp[i][j] = dp[i][j - 1]<br><strong>code:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public boolean isSubsequence(String s, String t) &#123;</span><br><span class="line">        if(s.length() &#x3D;&#x3D; 0)&#123;</span><br><span class="line">            return true;</span><br><span class="line">        &#125;</span><br><span class="line">        char[] sCharArray &#x3D; s.toCharArray();</span><br><span class="line">        char[] tCharArray &#x3D; t.toCharArray();</span><br><span class="line">        boolean[][] dp &#x3D; new boolean[s.length() + 1][t.length() + 1];</span><br><span class="line">        for(int i &#x3D; 0; i &lt; t.length(); i++)&#123;</span><br><span class="line">            dp[0][i] &#x3D; true;</span><br><span class="line">        &#125;</span><br><span class="line">        int i &#x3D; 1;</span><br><span class="line">        for(; i &lt;&#x3D; s.length(); i++)&#123;</span><br><span class="line">            for(int j &#x3D; 1; j &lt;&#x3D; t.length(); j++)&#123;</span><br><span class="line">                if(sCharArray[i - 1] &#x3D;&#x3D; tCharArray[j - 1])&#123;</span><br><span class="line">                    dp[i][j] &#x3D; dp[i - 1][j - 1];</span><br><span class="line">                &#125;else&#123;</span><br><span class="line">                    dp[i][j] &#x3D; dp[i][j - 1];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return dp[s.length()][t.length()];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="longestPalindrome"><a href="#longestPalindrome" class="headerlink" title="longestPalindrome"></a><a href="https://leetcode-cn.com/problems/longest-palindromic-substring/submissions/" target="_blank" rel="noopener">longestPalindrome</a></h2><p><strong>1、暴力搜索</strong><br><strong>explain:</strong><br>&emsp;&emsp;1、遍历所有子串;<br>&emsp;&emsp;2、判断是否为回文串。<br><strong>code:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">  class Solution &#123;</span><br><span class="line">    public String longestPalindrome(String s) &#123;</span><br><span class="line">        if(s.length() &lt;&#x3D; 1)&#123;</span><br><span class="line">            return s;</span><br><span class="line">        &#125;</span><br><span class="line">        String res &#x3D; s.substring(0, 1);</span><br><span class="line">        int maxLength &#x3D; 1;</span><br><span class="line">        for(int i &#x3D; 0; i &lt; s.length(); i++)&#123;</span><br><span class="line">            for(int j &#x3D; i + 1; j &lt;&#x3D; s.length(); j++)&#123;</span><br><span class="line">                if(((j - i) &gt; maxLength) &amp;&amp; isPalindrome(s.substring(i, j)))&#123;</span><br><span class="line">                    res &#x3D; s.substring(i, j);</span><br><span class="line">                    maxLength &#x3D; j - i;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static boolean isPalindrome(String s)&#123;</span><br><span class="line">        if(s.length() &lt;&#x3D; 1)&#123;</span><br><span class="line">            return true;</span><br><span class="line">        &#125;</span><br><span class="line">        char[] sCharArray &#x3D; s.toCharArray();</span><br><span class="line">        int i &#x3D; 0;</span><br><span class="line">        int j &#x3D; s.length() - 1;</span><br><span class="line">        while(i &lt; j)&#123;</span><br><span class="line">            if(sCharArray[i] !&#x3D; sCharArray[j])&#123;</span><br><span class="line">                return false;</span><br><span class="line">            &#125;</span><br><span class="line">            i++;</span><br><span class="line">            j--;</span><br><span class="line">        &#125;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<h3 id="一、基本数据类型"><a href="#一、基本数据类型" class="headerlink" title="一、基本数据类型"></a>一、基本数据类型</h3><p>&emsp;1、String<br>&emsp;2、Integer等包装类<br>&emsp;3、char、byte、int、float、double、boolean</p>
 <hr>
 
       
@@ -318,7 +310,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/algorithms/" rel="tag"># algorithms</a>
+            <a href="/tags/java/" rel="tag"># java</a>
           
         </div>
       
@@ -331,8 +323,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/01/04/algorithms_and_dataStructure/" rel="next" title="算法与数据结构">
-                <i class="fa fa-chevron-left"></i> 算法与数据结构
+              <a href="/2020/02/17/CPU-Structure/" rel="next" title="CPU_Structure">
+                <i class="fa fa-chevron-left"></i> CPU_Structure
               </a>
             
           </div>
@@ -340,10 +332,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/01/04/to-do-list/" rel="prev" title="to-do-list">
-                to-do-list <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -466,7 +454,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Is-Subsequence"><span class="nav-number">1.</span> <span class="nav-text">Is Subsequence</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#longestPalindrome"><span class="nav-number">2.</span> <span class="nav-text">longestPalindrome</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、基本数据类型"><span class="nav-number">1.</span> <span class="nav-text">一、基本数据类型</span></a></li></ol></div>
             
 
           </div>
