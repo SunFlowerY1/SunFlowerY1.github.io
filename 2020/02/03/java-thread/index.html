@@ -292,6 +292,7 @@
       
         <hr>
 <h2 id="一、ThreadLocal"><a href="#一、ThreadLocal" class="headerlink" title="一、ThreadLocal"></a>一、ThreadLocal</h2><p>&emsp;<a href="https://www.jianshu.com/p/98b68c97df9b" target="_blank" rel="noopener"><strong>threadLocal 好文</strong></a><br>&emsp;<a href="https://blog.csdn.net/zzg1229059735/article/details/82715741" target="_blank" rel="noopener"><strong>好文</strong></a></p>
+<h2 id="二、CAS"><a href="#二、CAS" class="headerlink" title="二、CAS"></a>二、CAS</h2><h3 id="乐观锁与悲观锁"><a href="#乐观锁与悲观锁" class="headerlink" title="乐观锁与悲观锁"></a>乐观锁与悲观锁</h3><p>&emsp;<strong>悲观锁：</strong>完备的考虑所有情况，也就是悲观的考虑一切可能发生的情况，相应的也会付出最大的开销，不论是否发生，为了保障线程安全，以代价换取安全；在多线程执行的情况下，每次访问共享区域的时候都认为其他线程会访问和写临界区，因此需要对临界区加锁，所有线程同步在锁上；java中的synchronized（内置锁、对象锁）即为悲观锁，保障了原子性、可见性和有序性。<br>&emsp;<strong>乐观锁：</strong>乐观锁看待问题是乐观的，认为多线程访问临界区时，有些情况可能不会发生，或者发生的频率不高，所以在访问临界区时不使用悲观锁进行同步，而是正常访问临界区，在有更新操作的时候对共享变量进行判断：是否有其他线程修改数据；显然乐观锁提高了读操作的效率，适合读多于写的场景；java中一种乐观锁的实现方式是CAS。</p>
 <hr>
 
       
@@ -458,7 +459,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、ThreadLocal"><span class="nav-number">1.</span> <span class="nav-text">一、ThreadLocal</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、ThreadLocal"><span class="nav-number">1.</span> <span class="nav-text">一、ThreadLocal</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、CAS"><span class="nav-number">2.</span> <span class="nav-text">二、CAS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#乐观锁与悲观锁"><span class="nav-number">2.1.</span> <span class="nav-text">乐观锁与悲观锁</span></a></li></ol></li></ol></div>
             
 
           </div>
