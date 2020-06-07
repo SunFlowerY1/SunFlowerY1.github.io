@@ -226,6 +226,128 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/05/something-about-env/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="SunFlowerY1">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="追光者">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/06/05/something-about-env/" itemprop="url">something_about_env</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-05T19:24:35+08:00">2020-06-05</time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<h2 id="一、安装文件下载（使用-rpm-方式安装）"><a href="#一、安装文件下载（使用-rpm-方式安装）" class="headerlink" title="一、安装文件下载（使用 rpm 方式安装）"></a>一、安装文件下载（使用 rpm 方式安装）</h2><p>&emsp;<a href="https://dev.mysql.com/downloads/mysql/5.7.html" target="_blank" rel="noopener"><strong>mysql-5.7.x</strong></a><br>&emsp;rpm 文件列表：<br>&emsp;&emsp;&emsp;1、mysql-community-client-5.7.30-1.el7.x86_64.rpm;<br>&emsp;&emsp;&emsp;2、mysql-community-libs-5.7.30-1.el7.x86_64.rpm;<br>&emsp;&emsp;&emsp;3、mysql-community-common-5.7.30-1.el7.x86_64.rpm;<br>&emsp;&emsp;&emsp;4、mysql-community-server-5.7.30-1.el7.x86_64.rpm.</p>
+<h2 id="二、安装"><a href="#二、安装" class="headerlink" title="二、安装"></a>二、安装</h2><p>&emsp;&emsp;rpm -e mariadb-libs –nodeps (file 冲突解决)<br>&emsp;&emsp;rpm -ivh mysql-community-common-5.7.30-1.el7.x86_64.rpm<br>&emsp;&emsp;rpm -ivh mysql-community-libs-5.7.30-1.el7.x86_64.rpm<br>&emsp;&emsp;rpm -ivh mysql-community-client-5.7.30-1.el7.x86_64.rpm<br>&emsp;&emsp;rpm -ivh mysql-community-server-5.7.30-1.el7.x86_64.rpm</p>
+<h2 id="三、启动及配置"><a href="#三、启动及配置" class="headerlink" title="三、启动及配置"></a>三、启动及配置</h2><p>&emsp;&emsp;systemctl start mysqld   systemctl status mysqld<br>&emsp;&emsp;获取初始密码: grep ‘temporary password’ /var/log/mysqld.log<br>&emsp;&emsp;mysql -uroot -p<br>&emsp;&emsp;设置密码策略和长度:<br>&emsp;&emsp;use mysql; set global validate_password_policy=0;<br>&emsp;&emsp;set global validate_password_length=1;<br>&emsp;&emsp;重置密码:set password for root@localhost=password(‘123456’)<br>&emsp;&emsp;配置远程登录:select user,host from user;<br>&emsp;&emsp;show grants;<br>&emsp;&emsp;grant all privileges on <em>.</em> TO ‘root’@’%’ identified by ‘123456’;<br>&emsp;&emsp;flush privileges;<br>&emsp;&emsp;时间默认值不能为 0 问题:select @@sql_mode;<br>&emsp;&emsp;修改配置文件 /etc/my.cnf,添加 sql-mode=ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION 重启即可</p>
+<hr>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/24/hbase-summary/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1312,128 +1434,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/04/jvm/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="SunFlowerY1">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="追光者">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/01/04/jvm/" itemprop="url">java 虚拟机相关知识</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-04T22:03:10+08:00">2020-01-04</time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <hr>
-<h2 id="一、参数设置-由于很多的JVM分析都是基于日志的，所以添加如下参数即可"><a href="#一、参数设置-由于很多的JVM分析都是基于日志的，所以添加如下参数即可" class="headerlink" title="一、参数设置(由于很多的JVM分析都是基于日志的，所以添加如下参数即可)"></a>一、参数设置(<strong>由于很多的JVM分析都是基于日志的，所以添加如下参数即可</strong>)</h2><p>&emsp;&emsp;-version:gc<br>&emsp;&emsp;-XX:+HeapDumpOnOutOfMemoryError<br>&emsp;&emsp;-XX:+PrintGCDetails<br>&emsp;&emsp;-XX:+PrintGCtimeStamps<br>&emsp;&emsp;-XX:+PrintGCDateStamps<br>&emsp;&emsp;-Xloggc:/app1/gclogs/gc.log(<strong>目录需存在</strong>)</p>
-<h2 id="二、分析工具"><a href="#二、分析工具" class="headerlink" title="二、分析工具"></a>二、分析工具</h2><p>&emsp;&emsp;</p>
-<h2 id="三、参考资料"><a href="#三、参考资料" class="headerlink" title="三、参考资料"></a>三、参考资料</h2><p>&emsp;<a href="https://mp.weixin.qq.com/s?__biz=MzU2NjIzNDk5NQ==&mid=2247483828&idx=6&sn=78045f382072d56756d1d05b39a27e5a&scene=21#wechat_redirect" target="_blank" rel="noopener"><strong>JVM</strong></a></p>
-<hr>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1484,7 +1484,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1497,7 +1497,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
