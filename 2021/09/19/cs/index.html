@@ -120,7 +120,7 @@
 
 
 
-  <title>首页 | 不会独孤九剑的令狐冲</title>
+  <title>正则序和应用序 | 不会独孤九剑的令狐冲</title>
   
 
 
@@ -139,7 +139,7 @@
     
   
 
-  <div class="container sidebar-position-right page-archive">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -209,111 +209,160 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
-
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        嗯..! 目前共计 15 篇日志。 继续努力。
-      </span>
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2020">2020</h1>
-          </div>
-        
-        
-
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/09/19/cs/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="SunFlowerY1">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不会独孤九剑的令狐冲">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2020/04/24/hbase-summary/" itemprop="url">
-              
-                <span itemprop="name">hbase_summary</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">正则序和应用序</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2020-04-24T15:00:49+08:00"
-              content="2020-04-24" >
-          04-24
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-09-19T14:46:15+08:00">2021-09-19</time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
 
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2020/04/14/java-basic/" itemprop="url">
-              
-                <span itemprop="name">java_basic</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2020-04-14T10:31:49+08:00"
-              content="2020-04-14" >
-          04-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
+      
+        <hr>
+<h2 id="example"><a href="#example" class="headerlink" title="[example]"></a>[example]</h2><p>(define (square x) (* x x))<br>(define (sum-squares x y)<br>    (+ (square x) (square y)))<br>(define (f a)<br>    (sum-squares (+ a 1) (* a 2)))</p>
+<p>例如：(f 5)</p>
+<h2 id="应用序"><a href="#应用序" class="headerlink" title="应用序"></a>应用序</h2><p>应用序是先一步步替换子组合求值再去应用的为应用序</p>
+<h3 id="f-5-展开"><a href="#f-5-展开" class="headerlink" title="(f 5) 展开"></a><code>(f 5)</code> 展开</h3><p><code>(sum-squares (+ a 1) (* a 2))</code></p>
+<h3 id="5替换a为"><a href="#5替换a为" class="headerlink" title="5替换a为"></a><code>5</code>替换<code>a</code>为</h3><p><code>(sum-squares (+ 5 1) (* 5 2))</code></p>
+<h3 id="替换sum-squares"><a href="#替换sum-squares" class="headerlink" title="替换sum-squares"></a>替换<code>sum-squares</code></h3><p><code>(+(square 6) (square 10))</code></p>
+<h3 id="替换square"><a href="#替换square" class="headerlink" title="替换square"></a>替换<code>square</code></h3><p><code>(+ (* 6 6) (* 10 10))</code></p>
+<h3 id="最后求和"><a href="#最后求和" class="headerlink" title="最后求和"></a>最后求和</h3><p><code>136</code></p>
+<h2 id="正则序"><a href="#正则序" class="headerlink" title="正则序"></a>正则序</h2><p>正则序是一步步替换所有过程直至最原始的符号<br><code>(f 5)</code>展开<br><code>(sum-squares (+ 5 1) (* 5 2))</code>展开<br><code>(+ (square (+ 5 1)) (square (* 5 2)))</code>展开<br><code>(+ (* (+ 5 1) (+ 5 1)) (* (* 5 2) (* 5 2)))</code>最后直接规约求和</p>
+<h3 id="最后求和-1"><a href="#最后求和-1" class="headerlink" title="最后求和"></a>最后求和</h3><p><code>136</code></p>
+<h3 id="可以看出正则就是把所有过程函数全部替换直到最原始的一些过程函数最后规约"><a href="#可以看出正则就是把所有过程函数全部替换直到最原始的一些过程函数最后规约" class="headerlink" title="可以看出正则就是把所有过程函数全部替换直到最原始的一些过程函数最后规约."></a>可以看出正则就是把所有过程函数全部替换直到最原始的一些过程函数最后规约.</h3><hr>
+
+      
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CS/" rel="tag"># CS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/08/05/something-about-linux/" rel="next" title="something_about_linux">
+                <i class="fa fa-chevron-left"></i> something_about_linux
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/09/19/machine-learning/" rel="prev" title="Machine-Learning">
+                Machine-Learning <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -321,6 +370,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -341,8 +394,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -393,6 +455,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#example"><span class="nav-number">1.</span> <span class="nav-text">[example]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用序"><span class="nav-number">2.</span> <span class="nav-text">应用序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#f-5-展开"><span class="nav-number">2.1.</span> <span class="nav-text">(f 5) 展开</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5替换a为"><span class="nav-number">2.2.</span> <span class="nav-text">5替换a为</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#替换sum-squares"><span class="nav-number">2.3.</span> <span class="nav-text">替换sum-squares</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#替换square"><span class="nav-number">2.4.</span> <span class="nav-text">替换square</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最后求和"><span class="nav-number">2.5.</span> <span class="nav-text">最后求和</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正则序"><span class="nav-number">3.</span> <span class="nav-text">正则序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#最后求和-1"><span class="nav-number">3.1.</span> <span class="nav-text">最后求和</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可以看出正则就是把所有过程函数全部替换直到最原始的一些过程函数最后规约"><span class="nav-number">3.2.</span> <span class="nav-text">可以看出正则就是把所有过程函数全部替换直到最原始的一些过程函数最后规约.</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -522,6 +600,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.0"></script>
+
+
 
   
 

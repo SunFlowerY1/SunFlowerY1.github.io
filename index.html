@@ -343,6 +343,135 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/09/19/cs/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="SunFlowerY1">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不会独孤九剑的令狐冲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/09/19/cs/" itemprop="url">正则序和应用序</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-09-19T14:46:15+08:00">2021-09-19</time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<h2 id="example"><a href="#example" class="headerlink" title="[example]"></a>[example]</h2><p>(define (square x) (* x x))<br>(define (sum-squares x y)<br>    (+ (square x) (square y)))<br>(define (f a)<br>    (sum-squares (+ a 1) (* a 2)))</p>
+<p>例如：(f 5)</p>
+<h2 id="应用序"><a href="#应用序" class="headerlink" title="应用序"></a>应用序</h2><p>应用序是先一步步替换子组合求值再去应用的为应用序</p>
+<h3 id="f-5-展开"><a href="#f-5-展开" class="headerlink" title="(f 5) 展开"></a><code>(f 5)</code> 展开</h3><p><code>(sum-squares (+ a 1) (* a 2))</code></p>
+<h3 id="5替换a为"><a href="#5替换a为" class="headerlink" title="5替换a为"></a><code>5</code>替换<code>a</code>为</h3><p><code>(sum-squares (+ 5 1) (* 5 2))</code></p>
+<h3 id="替换sum-squares"><a href="#替换sum-squares" class="headerlink" title="替换sum-squares"></a>替换<code>sum-squares</code></h3><p><code>(+(square 6) (square 10))</code></p>
+<h3 id="替换square"><a href="#替换square" class="headerlink" title="替换square"></a>替换<code>square</code></h3><p><code>(+ (* 6 6) (* 10 10))</code></p>
+<h3 id="最后求和"><a href="#最后求和" class="headerlink" title="最后求和"></a>最后求和</h3><p><code>136</code></p>
+<h2 id="正则序"><a href="#正则序" class="headerlink" title="正则序"></a>正则序</h2><p>正则序是一步步替换所有过程直至最原始的符号<br><code>(f 5)</code>展开<br><code>(sum-squares (+ 5 1) (* 5 2))</code>展开<br><code>(+ (square (+ 5 1)) (square (* 5 2)))</code>展开<br><code>(+ (* (+ 5 1) (+ 5 1)) (* (* 5 2) (* 5 2)))</code>最后直接规约求和</p>
+<h3 id="最后求和-1"><a href="#最后求和-1" class="headerlink" title="最后求和"></a>最后求和</h3><p><code>136</code></p>
+<h3 id="可以看出正则就是把所有过程函数全部替换直到最原始的一些过程函数最后规约"><a href="#可以看出正则就是把所有过程函数全部替换直到最原始的一些过程函数最后规约" class="headerlink" title="可以看出正则就是把所有过程函数全部替换直到最原始的一些过程函数最后规约."></a>可以看出正则就是把所有过程函数全部替换直到最原始的一些过程函数最后规约.</h3><hr>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/05/something-about-linux/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1310,125 +1439,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/04/to-do-list/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="SunFlowerY1">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="不会独孤九剑的令狐冲">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/01/04/to-do-list/" itemprop="url">to-do-list</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-04T22:24:15+08:00">2020-01-04</time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <hr>
-<h2 id="algorithms-and-dataStruct"><a href="#algorithms-and-dataStruct" class="headerlink" title="algorithms and dataStruct"></a>algorithms and dataStruct</h2><h3 id="一、手撕动态规划"><a href="#一、手撕动态规划" class="headerlink" title="一、手撕动态规划"></a>一、手撕动态规划</h3><p>&emsp;<strong>leetcode</strong><br>&emsp;<a href="https://leetcode.com/tag/dynamic-programming/" target="_blank" rel="noopener">动态规划</a><br>&emsp;不要惧怕，勇敢向前，会有不一样的风景</p>
-<h3 id="二、数据结构与算法分析"><a href="#二、数据结构与算法分析" class="headerlink" title="二、数据结构与算法分析"></a>二、数据结构与算法分析</h3><h2 id="emsp-栈–ADT"><a href="#emsp-栈–ADT" class="headerlink" title="&emsp;栈–ADT"></a>&emsp;栈–ADT</h2>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1479,7 +1489,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
