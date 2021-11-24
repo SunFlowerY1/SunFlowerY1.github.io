@@ -295,7 +295,20 @@
       
         
           
-            
+            <h2 id="背景"><a href="#背景" class="headerlink" title="[背景]"></a>[背景]</h2><p>&emsp;&emsp;实现四层负载均衡和高可用，出于想使用 80 端口，自运维 lvs + keepalived。</p>
+<h2 id="LVS-KEEPALIVED-架构图"><a href="#LVS-KEEPALIVED-架构图" class="headerlink" title="[LVS+KEEPALIVED 架构图]"></a>[LVS+KEEPALIVED 架构图]</h2><pre><code>xxxxxxxxxx
+x Client x
+xxxxxxxxxx
+    │
+    │</code></pre><p>………..│…………….▼………………│………..<br>           │                                   │<br>           ▼                                   ▼<br>xxxxxxxxxxxxxxxxxxxxxxxxx        xxxxxxxxxxxxxxxxxxxxxxxxx<br>x LVS_KEEPALIVED_MASTER x──┐     x LVS_KEEPALIVED_BACKUP x<br>xxxxxxxxxxx│xxxxxxxxxxxxx  │     xxxxxxxxxxxxxxxxxxxxxxxxx<br>           │               │<br>………..│……………│………………………….<br>           ▼               │<br>        xxxxxxxx           │             xxxxxxxx<br>        x RS_1 x           └────────────►x RS_2 x<br>        xxxxxxxx                         xxxxxxxx</p>
+<p>…………………………………………………..</p>
+<pre><code>.
+           ▼
+
+
+
+
+                          .</code></pre>
           
         
       
